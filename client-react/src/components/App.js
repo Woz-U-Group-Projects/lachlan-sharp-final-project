@@ -16,7 +16,7 @@ function App() {
                         <div className='App-Title'>Blogsite</div>
                     </div>
                 </div>  
-
+                <div>Test</div>
                 <div className='App-Foreign-Component'>
                     <Welcome />
                 </div>
