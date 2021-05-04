@@ -1,0 +1,17 @@
+{
+    "tables": {
+        "blogposts": {
+            "tableName": "blogposts",
+            "indexes": []
+        },
+        "Tasks": {
+            "tableName": "Tasks",
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "indexes": []
+        }
+    },
+    "revision": 2
+}
