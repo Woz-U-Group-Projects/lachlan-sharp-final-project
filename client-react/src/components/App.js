@@ -1,8 +1,5 @@
 import React from 'react';
 import '../stylesheets/App.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { log_in } from '../actions';
-
 import Welcome from './Welcome';
 
 function App() {
@@ -16,9 +13,8 @@ function App() {
                         <div className='App-Title'>Blogsite</div>
                     </div>
                 </div>  
-                <div>Test</div>
                 <div className='App-Foreign-Component'>
-                    <Welcome />
+                    <Welcome uri='http://localhost:3001/users' />
                 </div>
 
 

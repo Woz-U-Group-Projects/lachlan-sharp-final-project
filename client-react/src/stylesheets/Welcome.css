@@ -6,45 +6,6 @@
     justify-content: space-around;
 }
 
-.Welcome-Text-Container {
-    width: 49.75%;
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid black; */
-}
-
-.App-Welcome-Title {
-    width: 10%;
-    font-weight: bold;
-    font-size: 40px;
-    font-family: 'Caveat', cursive;
-    margin-bottom: .5vh;
-    color: rgb(47, 179, 255);
-    justify-self: flex-start;
-    text-shadow: 1px 1px #16161d;
-
-    /* border: 1px solid red */
-}
-
-.Welcome-Text {
-    width: 100%;
-    font-size: 40px;
-    font-family:'Times New Roman', Times, serif;
-    margin-bottom: 10vh;
-    margin-right: 30px;
-    font-weight: bold;
-    font-family: 'Caveat', cursive;
-    text-shadow: 1.5px 1.5px #454552;
-    color: #16161d;
-}
-
-.Welcome-Line {
-    height: 100%;
-    width: .5%;
-    background-color: #16161d;
-    border: 3px solid #16161d;
-    border-radius: 10px;
-}
 
 .Welcome-Form-Container {
     display: flex;
@@ -73,7 +34,7 @@ Form {
 }
 
 
-#Form-Email {
+#Form-Username {
 
     width: 100%;
     /* border: 1px solid black */
