@@ -46,7 +46,7 @@ body {
 .App-Title {
     width: 10%;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 3vh;
     font-family: 'Caveat', cursive;
     margin-bottom: .5vh;
     color: rgb(47, 179, 255);
@@ -63,4 +63,14 @@ body {
     position: fixed;
     /* border: 1px solid red; */
     height: 70vh;
+}
+
+.App-Profile-Component {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    /* border: 1px solid red; */
+    height: 85vh;
 }
