@@ -30,8 +30,6 @@ router.post('/signup', function (req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req.body.username);
-  console.log(req.body.password);
   models.users
     .findOne({
       where: {

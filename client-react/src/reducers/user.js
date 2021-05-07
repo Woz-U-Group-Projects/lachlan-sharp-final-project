@@ -1,12 +1,12 @@
-const userReducer = (state = {
-    user: {}
-}, action) => {
+
+
+const user = (state = {}, action) => {
     switch(action.type) {
         case 'USER_DATA':
-            return {...state, user: action.payload}
+            return action.payload
         default:
-            return state;
+            return {...state};
     }
 }
 
-export default userReducer;
+export default user;

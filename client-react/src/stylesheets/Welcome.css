@@ -9,7 +9,9 @@
 
 .Welcome-Form-Container {
     display: flex;
-    width: 49.75%;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     font-size: 20px;
     /* border: 1px solid red; */
     height: 100%;
@@ -21,16 +23,17 @@
     align-items: center;
     justify-content: center;
     /* border: 1px solid blue; */
+
 }
 
 Form {
     display: flex;
     flex-direction: column;
     height: 50%;
-    width: 80%;
+    width: 60%;
     /* border: 1px solid green; */
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 
@@ -43,3 +46,5 @@ Form {
 #Form-Password {
     width: 100%;
 }
+
+

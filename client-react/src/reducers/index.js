@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import loggedReducer from './logged';
-import userReducer from './user';
+import user from './user';
 import passwordReducer from './password';
 import usernameReducer from './username';
 
 
 const rootReducer = combineReducers({
     isLogged: loggedReducer,
-    user: userReducer,
+    user,
     username: usernameReducer,
     password: passwordReducer
 

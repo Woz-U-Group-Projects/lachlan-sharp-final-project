@@ -1,11 +1,9 @@
-const initialState = {
-    username: ''
-}
 
-const usernameReducer = (state = initialState, action) => {
+
+const usernameReducer = (state = '', action) => {
     switch(action.type) {
         case 'USERNAME':
-            return {...state, username: action.payload}
+            return {...state}, action.payload
         default:
             return state;
     }
