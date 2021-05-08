@@ -8,23 +8,11 @@ import Signup from './Signup';
 
 let userData = {};
 
+let username = '';
+let password = '';
+
 class Welcome extends Component {
 
-
-
-    usernameAction = (event) => {
-        this.props.dispatch({
-            type: 'USERNAME',
-            payload: event
-        })
-    }
-
-    passwordAction = (event) => {
-        this.props.dispatch({
-            type: 'PASSWORD',
-            payload: event
-        })
-    }
 
     log_in = (userdata) => {
         this.props.dispatch({
@@ -50,7 +38,7 @@ class Welcome extends Component {
 
     loginRequest = () => {
         var encodedURI = window.encodeURI(this.props.uri);
-        return axios.post(encodedURI, { username: this.props.username, password: this.props.password })
+        return axios.post(encodedURI, { username: username, password: password })
             .then(response => {
                 userData = response.data;
                 this.log_in(userData);
@@ -78,7 +66,7 @@ class Welcome extends Component {
                                             size='lg'
                                             placeholder='Username'
                                             name='username'
-                                            onChange={event => this.usernameAction(event.target.value)}></Form.Control>
+                                            onChange={event => username = event.target.value}></Form.Control>
                                     </Form.Group>
 
                                     <Form.Group controlId="Form-Password">
@@ -87,7 +75,7 @@ class Welcome extends Component {
                                             size='lg'
                                             placeholder='Password'
                                             name='password'
-                                            onChange={event => this.passwordAction(event.target.value)}></Form.Control>
+                                            onChange={event => password = event.target.value}></Form.Control>
                                     </Form.Group>
                                     <Button type='button'
                                         variant='dark'
