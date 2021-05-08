@@ -1,0 +1,23 @@
+.Signup-Component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+    /* border: 1px solid blue; */
+}
+
+.Signup-Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+}
+
+#Form-Control {
+    width: 100%;
+}
+
+#Form-Button {
+    width: 100%;
+}

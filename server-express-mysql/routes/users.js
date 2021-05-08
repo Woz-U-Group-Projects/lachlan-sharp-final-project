@@ -7,14 +7,15 @@ var authenticationService = require('../services/auth');
 
 
 router.post('/signup', function (req, res, next) {
+  console.log(req.body)
   models.users
     .findOrCreate({
       where: {
         username: req.body.username
       },
       defaults: {
-        firstName: req.body.firstname,
-        lastName: req.body.lastname,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         password: authenticationService.hashPassword(req.body.password),
         age: req.body.age
@@ -22,10 +23,16 @@ router.post('/signup', function (req, res, next) {
     })
     .spread(function (result, created) {
       if (created) {
-        res.send('User successfully created');
+        console.log('User successfully created');
       } else {
-        res.send('This user already exists');
+        console.log('User already exists');
       }
+    })
+    .catch(err => {
+      if(err.response) {
+        console.log(error.response.data, error.response.status, error.response.headers)
+      }
+      console.log(err.message);
     });
 });
 
