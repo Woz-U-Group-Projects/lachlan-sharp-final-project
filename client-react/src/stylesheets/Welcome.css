@@ -19,6 +19,7 @@
 
 .Welcome-Form {
     display: flex;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -47,4 +48,19 @@ Form {
     width: 100%;
 }
 
+/* Sign up Form */
+
+.Signup-Component-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height:50vh;
+    /* border: 1px solid red; */
+}
+
+#login-link {
+    /* border: 1px solid black; */
+}
 
