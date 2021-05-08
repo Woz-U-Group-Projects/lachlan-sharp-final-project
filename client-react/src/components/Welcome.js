@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import '../stylesheets/Welcome.css';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Signup from './Signup';
 
 let userData = {};

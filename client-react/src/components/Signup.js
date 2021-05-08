@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, AccordionCollapse } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap';
 import '../stylesheets/Signup.css';
 import axios from 'axios';
 
@@ -30,9 +29,9 @@ export default class Signup extends Component {
             lastName: lastName,
             firstName: firstName,
             email: email,
-            age: age
+            age: parseInt(age)
         })
-        .then(this.signoffAction)
+        .then(console.log('User Created!'))
     }
 
 
@@ -106,7 +105,7 @@ export default class Signup extends Component {
                                 onChange={event => age = event.target.value}
                                 required></Form.Control>
                         </Form.Group>
-                        <Button type='button' 
+                        <Button type='buton' 
                                 id='Form-Button' 
                                 variant='dark'
                                 onClick={this.signupRequest}>Signup!</Button>
