@@ -41,7 +41,12 @@ class Welcome extends Component {
         return axios.post(encodedURI, { username: username, password: password })
             .then(response => {
                 userData = response.data;
-                this.log_in(userData);
+                if (response.data.iduser) {
+                    this.log_in(userData)
+                } else {
+                    window.location.reload();
+                    alert('Incorrect Username or Password')
+                } 
             })
     }
 

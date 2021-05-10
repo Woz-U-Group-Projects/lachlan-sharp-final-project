@@ -1,0 +1,72 @@
+.Profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.Profile-Box {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/Shiny-Dark.png);
+    border-radius: 4%;
+    /* border: 1px solid rgb(255, 0, 234); */
+    width: 95%;
+    height: 75vh;
+    color: whitesmoke;
+}
+
+.Profile-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-left: 3vw;
+    margin-right: 5vw;
+    font-family: 'Caveat', cursive;
+    font-size: 6vh;
+    border: 1px solid red;
+    width: 93%;
+    height: 8%;
+}
+
+.Profile-Header-Name {
+    border: 1px solid yellow;
+    text-shadow: 1px 1.5px whitesmoke;
+    color: #0099ff;
+}
+
+.Profile-Header-Forum-Link {
+    border: 1px solid yellow;
+    text-shadow: 1px 1.5px whitesmoke;
+}
+
+.Profile-Header-Forum-Link:hover {
+    animation: colorChange .5s forwards;
+}
+
+.Profile-Header-Signout {
+    border: 1px solid yellow;
+    text-shadow: 1px 1.5px whitesmoke;
+}
+
+@keyframes colorChange {
+    from {
+        color: whitesmoke;
+    }
+    to {
+        color: rgb(47, 179, 255);
+    }
+}
+
+.Profile-Header-Signout:hover {
+    animation: colorChange .5s forwards;
+}
+
+.Profile-Body {
+    border: 1px solid blue;
+    height: 100%;
+    margin: 1vh 2vw 3vh 2vw;
+}

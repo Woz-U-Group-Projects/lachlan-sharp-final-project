@@ -69,8 +69,8 @@ body {
     display: flex;
     width: 100vw;
     align-items: center;
-    justify-content: center;
     position: fixed;
-    /* border: 1px solid red; */
-    height: 85vh;
+    justify-content: center;
+    /* border: 1px solid blue; */
+    height: 95vh;
 }
