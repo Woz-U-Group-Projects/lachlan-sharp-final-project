@@ -13,28 +13,17 @@ let password = '';
 
 class Welcome extends Component {
 
+    // signupAction = () => {
+    //     this.props.dispatch({
+    //         type: 'SIGN_UP'
+    //     })
+    // }
 
-    log_in = (userdata) => {
-        this.props.dispatch({
-            type: "USER_DATA",
-            payload: userdata
-        });
-        this.props.dispatch({
-            type: "LOG_IN"
-        });
-    }
-
-    signupAction = () => {
-        this.props.dispatch({
-            type: 'SIGN_UP'
-        })
-    }
-
-    signoffAction = () => {
-        this.props.dispatch({
-            type: 'SIGN_OFF'
-        })
-    }
+    // signoffAction = () => {
+    //     this.props.dispatch({
+    //         type: 'SIGN_OFF'
+    //     })
+    // }
 
     loginRequest = () => {
         var encodedURI = window.encodeURI(this.props.uri);
@@ -42,7 +31,8 @@ class Welcome extends Component {
             .then(response => {
                 userData = response.data;
                 if (response.data.iduser) {
-                    this.log_in(userData)
+                    this.props.log_in();
+                    this.props.userData(userData);
                 } else {
                     window.location.reload();
                     alert('Incorrect Username or Password')
@@ -90,7 +80,7 @@ class Welcome extends Component {
                                 <div className='Welcome-Signup-Link'>
                                     <Router>
                                         <Link to='/signup'
-                                            onClick={this.signupAction}>Not a user? Sign Up!</Link>
+                                            onClick={() => this.props.signupAction()}>Not a user? Sign Up!</Link>
                                     </Router>
                                 </div>
                             </div>
@@ -100,7 +90,7 @@ class Welcome extends Component {
                                 <Signup uri='http://localhost:3001/users/signup' />
                                 <Router>
                                     <Link to='/'
-                                        onClick={this.signoffAction}
+                                        onClick={() => this.props.signoffAction()}
                                         id='login-link'>Back to Login</Link>
                                 </Router>
                             </div>
@@ -109,6 +99,15 @@ class Welcome extends Component {
                 </div>
             </div>
         )
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        log_in: () => dispatch({ type: "LOG_IN" }),
+        userData: (data) => dispatch({ type: "USER_DATA", payload: data }),
+        signupAction: () => dispatch({ type: "SIGN_UP" }),
+        signoffAction: () => dispatch({ type: "SIGN_OFF" })
     }
 }
 
@@ -122,4 +121,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Welcome);
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome);

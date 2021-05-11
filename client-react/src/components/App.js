@@ -22,7 +22,7 @@ class App extends React.Component {
                 </div>
                             :
                 <div className='App-Profile-Component'>
-                    <Profile />
+                    <Profile uri='http://localhost:3001/users'/>
                 </div>
 
                 }

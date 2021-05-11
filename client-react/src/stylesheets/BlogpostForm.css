@@ -1,0 +1,41 @@
+.Blogpost-Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 100%;
+}
+
+.Form {
+    display: flex;
+    /* border: 1px solid yellow; */
+    width: 60%;
+    height: 90%
+}
+
+.Blog-Title {
+    /* border: 1px solid blue; */
+    width: 100%;
+}
+
+.Blog-Text {
+    /* border:1px solid orange; */
+    height: 25vh;
+}
+
+.Blog-Textarea {
+    height: 100%
+}
+
+.Profile-Link {
+    display: flex;
+    align-self: flex-end;
+    margin-right: 3vw;
+    margin-bottom: 2vh;
+    height: 10vh;
+    width: 10vw;
+    font-family: 'Caveat', cursive;
+    font-size: 4vh;
+    /* border: 1px solid red; */
+}

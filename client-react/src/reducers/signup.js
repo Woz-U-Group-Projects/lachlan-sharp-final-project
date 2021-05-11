@@ -1,11 +1,9 @@
-let initialState = false;
-
-const signup = (state = initialState, action) => {
+const signup = (state = false, action) => {
     switch(action.type) {
         case 'SIGN_UP':
-            return  true
+            return  {...state}, true
         case 'SIGN_OFF':
-            return  false
+            return  {...state}, false
         default:
             return state
     }       

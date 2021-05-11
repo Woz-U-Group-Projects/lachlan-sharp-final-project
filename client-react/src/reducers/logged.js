@@ -5,11 +5,11 @@
 const loggedReducer = (state = true, action) => { //change initial state back to false
     switch(action.type){
         case 'LOG_IN':
-            return {...state}, true;
+            return  true;
         case 'LOG_OUT':
             return {...state}, false;
         default:
-            return {...state}, true; //Change back to false
+            return state; //Change back to false
     }
 }
 

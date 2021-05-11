@@ -21,35 +21,20 @@
 .Profile-Header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-top: 2vh;
     margin-left: 3vw;
     margin-right: 5vw;
     font-family: 'Caveat', cursive;
     font-size: 6vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 93%;
     height: 8%;
 }
 
 .Profile-Header-Name {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     text-shadow: 1px 1.5px whitesmoke;
     color: #0099ff;
-}
-
-.Profile-Header-Forum-Link {
-    border: 1px solid yellow;
-    text-shadow: 1px 1.5px whitesmoke;
-}
-
-.Profile-Header-Forum-Link:hover {
-    animation: colorChange .5s forwards;
-}
-
-.Profile-Header-Signout {
-    border: 1px solid yellow;
-    text-shadow: 1px 1.5px whitesmoke;
 }
 
 @keyframes colorChange {
@@ -61,12 +46,56 @@
     }
 }
 
+.Profile-Header-Forum-Link {
+    /* border: 1px solid yellow; */
+    text-shadow: 1px 1.5px whitesmoke;
+    position: absolute;
+    right:47.2vw;
+    font-size: 5vh;
+}
+
+.Profile-Header-Forum-Link:hover {
+    animation: colorChange .5s forwards;
+    cursor: pointer;
+}
+
+.Profile-Header-Signout {
+    /* border: 1px solid yellow; */
+    position: absolute;
+    right: 5vw;
+    text-shadow: 1px 1.5px whitesmoke;
+    font-size: 5vh;
+}
+
 .Profile-Header-Signout:hover {
     animation: colorChange .5s forwards;
+    cursor: pointer;
 }
 
 .Profile-Body {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     margin: 1vh 2vw 3vh 2vw;
+}
+
+.Profile-Body-Title {
+    /* border: 1px solid red; */
+    display: flex;
+    font-family: 'Caveat', cursive;
+    font-size: 5vh;
+}
+
+.Profile-Body-Create-Blog {
+    display: flex;
+    justify-content: flex-end;
+    /* border: 1px solid orange; */
+    position: relative;
+    bottom: -50vh;
+    font-family: 'Caveat', cursive;
+    font-size: 5vh;
+}
+
+.Profile-Body-Create-Blog:hover {
+    animation: colorChange .5s forwards;
+    cursor: pointer;
 }
