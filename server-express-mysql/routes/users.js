@@ -64,6 +64,25 @@ router.post('/', (req, res, next) => {
     .then(data => res.send(data))
 })
 
+router.post('/userBlogs', (req, res, next) => {
+  models.blogposts
+    .findAll({
+      where: {
+        iduser: req.body.userID
+      }
+    })
+    .then(blogs => res.json(blogs));
+})
+
+router.post('/createBlogPost', (req, res, next) => {
+  models.blogposts
+    .findOrCreate({
+      where: {
+        blogContent: req.body.blogContent
+      }
+    })
+})
+
 
 
 module.exports = router;
