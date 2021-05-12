@@ -74,8 +74,13 @@
 
 .Profile-Body {
     /* border: 1px solid blue; */
-    height: 100%;
+    height: 80%;
     margin: 1vh 2vw 3vh 2vw;
+}
+
+.Profile-Body-Blogs {
+    /* border: 1px solid red; */
+    height: 85%;
 }
 
 .Profile-Body-Title {
@@ -90,9 +95,22 @@
     justify-content: flex-end;
     /* border: 1px solid orange; */
     position: relative;
-    bottom: -50vh;
+    align-items: flex-end;
     font-family: 'Caveat', cursive;
     font-size: 5vh;
+}
+
+.Profile-Individual-Blogpost {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Caveat', cursive;
+    font-size: 5vh;
+    text-shadow: 1px 1.5px whitesmoke;
+}
+
+.Profile-Individual-Blogpost:hover {
+    animation: colorChange .5s forwards;
+    cursor: pointer;
 }
 
 .Profile-Body-Create-Blog:hover {

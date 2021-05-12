@@ -2,7 +2,7 @@
 const blogs = (state = {}, action) => {
     switch(action.type) {
         case 'BLOG_DATA':
-            return state, action.payload
+            return action.payload
         default:
             return {...state};
     }

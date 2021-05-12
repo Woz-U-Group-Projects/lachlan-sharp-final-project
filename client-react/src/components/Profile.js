@@ -5,11 +5,17 @@ import axios from 'axios';
 import CreateBlogPost from './CreateBlogPost';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
+let blogArray = [];
+
+
 class Profile extends Component {
 
     log_out = () => {
         this.props.dispatch({
             type: 'LOG_OUT'
+        })
+        this.props.dispatch({
+            type: 'USER_LOGOUT'
         })
     }
 
@@ -26,20 +32,28 @@ class Profile extends Component {
         })
     }
 
-    
-
     blogpostRequest = () => {
         var encodedURI = window.encodeURI(`${this.props.uri}/userBlogs`);
         return axios.post(encodedURI, { userID: parseInt(this.props.user.iduser) })
         .then(response => {
             this.blogDataAction(response.data);
-
+            blogArray = response.data;
+            blogArray.reverse();
         })
     }
 
-    componentDidMount() {
-        this.blogpostRequest();
+    requestTimeout = () => {
+        setTimeout(this.blogpostRequest, 100);
     }
+
+    componentWillMount() {
+        this.requestTimeout();
+    }
+
+    // componentDidMount() {
+    //     this.requestTimeout();
+    // }
+
 
 
     render() {
@@ -64,7 +78,13 @@ class Profile extends Component {
                                 Your Blogs: 
                             </div>
                             <div className="Profile-Body-Blogs">
-
+                                {blogArray.map(blog => {
+                                    return (
+                                        <div key={blog.blog_id} className='Profile-Individual-Blogpost'>
+                                            {blog.blogName}
+                                        </div>
+                                    )
+                                })}
                             </div>
                             <div className="Profile-Body-Create-Blog">
                                 <Router>
@@ -76,7 +96,7 @@ class Profile extends Component {
                 </div>
                     :
                     <div className="Profile-Box">
-                        <CreateBlogPost uri='http://localhost:3000/users/createBlogPost'/>
+                        <CreateBlogPost uri='http://localhost:3001/users/createBlogPost'/>
                     </div>
                     }
             </div>
