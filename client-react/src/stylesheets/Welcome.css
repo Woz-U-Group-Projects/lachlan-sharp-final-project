@@ -55,6 +55,7 @@ Form {
     flex-direction: column;
     justify-content: center;
     margin-top: 20vh;
+    margin-bottom: 20vh;
     width: 100%;
     align-items: center;
     height:50vh;

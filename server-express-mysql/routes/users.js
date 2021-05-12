@@ -71,7 +71,7 @@ router.post('/userBlogs', (req, res, next) => {
         iduser: req.body.userID
       }
     })
-    .then(blogs => res.json(blogs));
+    .then(blogs => res.send(blogs));
 })
 
 router.post('/createBlogPost', (req, res, next) => {
@@ -79,8 +79,30 @@ router.post('/createBlogPost', (req, res, next) => {
     .findOrCreate({
       where: {
         blogContent: req.body.blogContent
+      },
+      defaults: {
+        blogName: req.body.blogName,
+        academic: req.body.academic,
+        lifestyle: req.body.lifestyle,
+        professional: req.body.professional,
+        opinion: req.body.opinion,
+        entertainment: req.body.entertainment,
+        iduser: req.body.iduser
       }
     })
+    .spread(function (result, created) {
+      if (created) {
+        console.log('Blog successfully created');
+      } else {
+        console.log('Blog content already exists');
+      }
+    })
+    .catch(err => {
+      if(err.response) {
+        console.log(error.response.data, error.response.status, error.response.headers)
+      }
+      console.log(err.message);
+    });
 })
 
 

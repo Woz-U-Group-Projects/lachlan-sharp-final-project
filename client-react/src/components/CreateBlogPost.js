@@ -19,6 +19,9 @@ class CreateBlogPost extends Component {
 
     blogpostCreate = () => {
         var encodedURI = window.encodeURI(this.props.uri);
+        console.log('Starting Blogpost Create');
+        console.log('Blogname:', blogName);
+        console.log('Blogcontent:', blogContent);
         return axios.post(encodedURI, {
             blogName: blogName,
             blogContent: blogContent,
@@ -29,7 +32,19 @@ class CreateBlogPost extends Component {
             entertainment: parseInt(entertainment),
             iduser: parseInt(this.props.user.iduser)
         })
+        .then(() => { 
+            alert('Post Created!') } )
     }
+
+    blogpostRequest = () => {
+        var encodedURI = window.encodeURI(`${this.props.uri}/userBlogs`);
+        return axios.post(encodedURI, { userID: parseInt(this.props.user.iduser) })
+        .then(response => {
+            this.blogDataAction(response.data);
+        })
+    }
+
+
 
 
     render() {
@@ -104,7 +119,9 @@ class CreateBlogPost extends Component {
                                       onChange={event => blogContent = event.target.value} 
                                       rows={6}/>
                     </Form.Group>
-                    <Button type='submit' variant='info' size='lg'>Create Post</Button>
+                    <Button variant='info' size='lg' onClick={() => {
+                        this.blogpostCreate();
+                        this.blogpostRequest()}}>Create Post</Button>
                 </Form>
                 <div className='Profile-Link'>
                     <Router>
@@ -129,7 +146,8 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        blogpost: () => dispatch({ type: 'BLOG_POST' })
+        blogpost: () => dispatch({ type: 'BLOG_POST' }),
+        blogDataAction: (blogdata) => dispatch({ type: 'BLOG_DATA', payload: blogdata})
     }
 }
 

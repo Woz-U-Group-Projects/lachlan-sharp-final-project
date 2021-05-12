@@ -2,7 +2,7 @@
 
 
 
-const loggedReducer = (state = true, action) => { //change initial state back to false
+const loggedReducer = (state = false, action) => { //change initial state back to false
     switch(action.type){
         case 'LOG_IN':
             return  true;
